@@ -2,6 +2,7 @@ import { ContentType, DecapProps } from "@/types/decap";
 import { StaticProps } from "@/types/shared";
 import { promises as fs } from "fs";
 import matter from "gray-matter";
+import { notFound } from "next/navigation";
 import path from "path";
 
 export const POSTS_PATH = "content/posts";
@@ -21,8 +22,12 @@ export const resolveContentPaths = async (
 
 export const resolveContent = async <T>(
   contentType: ContentType,
-  filename: string
+  filename: string | string[] | undefined
 ): Promise<DecapProps<T>> => {
+  if (!filename) {
+    return notFound();
+  }
+
   const postsDirectory = path.join(process.cwd(), contentType);
   const filePath = path.join(postsDirectory, `${filename}.md`);
   const fileContent = await fs.readFile(filePath, "utf8");
