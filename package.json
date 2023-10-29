@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate": "npx netlify-ts public/admin/config.yml src/types",
+    "generate": "netlify-ts public/admin/config.yml src/types --label=false --capitalize",
     "lint": "next lint"
   },
   "dependencies": {
