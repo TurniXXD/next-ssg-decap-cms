@@ -1,2 +1,3 @@
-# next-ssg-decap-cms
-run `git push -u origin master` after everything is done
+# Next.js SSG project with netlify decap CMS
+
+- Deployed on netlify
