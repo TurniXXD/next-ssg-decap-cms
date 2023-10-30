@@ -7,6 +7,7 @@ import path from "path";
 
 export const POSTS_DIR = "posts";
 export const CONTACT_INFO_DIR = "contact-info";
+export const PRODUCTS_DIR = "products";
 
 export const resolveContentPaths = async (
   contentType: ContentType

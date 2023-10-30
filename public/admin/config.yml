@@ -35,6 +35,42 @@ collections:
           required: false,
         }
       - { label: "Obsah", name: "content", widget: "markdown" }
+  - name: "products"
+    label: "Produkty"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Název", name: "title", widget: "string" }
+      - {
+          label: "Identifikátor",
+          name: "identifier",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Datum zveřejnění",
+          name: "date",
+          widget: "datetime",
+          date_format: "DD.MM.YYYY",
+          time_format: "HH:mm",
+          format: "LLL",
+        }
+      - { label: "Cena", name: "price", widget: "number" }
+      - {
+          label: "Množství",
+          name: "quantity",
+          widget: "number",
+          required: false,
+        }
+      - { label: "Velikost", name: "size", widget: "string", required: false }
+      - { label: "Popis produktu", name: "description", widget: "markdown" }
+      - label: "Obrázky"
+        name: "images"
+        widget: "image"
+        media_library:
+          config:
+            multiple: true
   - name: "contact-info"
     label: "Kontaktní informace"
     folder: "content/contact-info"
@@ -42,7 +78,7 @@ collections:
     fields:
       - { label: "Název", name: "title", widget: "string" }
       - { label: "IČO", name: "ico", widget: "string", required: false }
-      - { label: "Telefon", name: "phone", widget: "number" }
+      - { label: "Telefon", name: "phone", widget: "string" }
       - { label: "Email", name: "email", widget: "string" }
       - { label: "Adresa", name: "address", widget: "string" }
       - {
