@@ -1,7 +1,8 @@
-import { POSTS_PATH } from "@/lib/decap";
+import { POSTS_DIR, CONTACT_INFO_DIR } from "@/lib/decap";
 
 export enum ContentType {
-  Posts = POSTS_PATH,
+  Posts = POSTS_DIR,
+  ContactInfo = CONTACT_INFO_DIR,
 }
 
 export interface DecapProps<T> {
